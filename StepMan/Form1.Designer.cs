@@ -37,44 +37,43 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -161,23 +160,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Настройки";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(66, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "300";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 72);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 13);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Скорость:";
-            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(66, 42);
@@ -194,6 +176,7 @@
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Шаг:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -203,6 +186,7 @@
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Круг:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -238,87 +222,54 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Задание";
             // 
-            // button1
+            // button2
             // 
-            this.button1.Location = new System.Drawing.Point(163, 128);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Перебор";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Location = new System.Drawing.Point(22, 128);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(50, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Старт";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label10
+            // numericUpDown1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 105);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 13);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "3";
+            this.numericUpDown1.Location = new System.Drawing.Point(22, 50);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 4;
             // 
-            // label9
+            // numericUpDown2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 79);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "2";
+            this.numericUpDown2.Location = new System.Drawing.Point(22, 76);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown2.TabIndex = 5;
             // 
-            // label8
+            // numericUpDown3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 52);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(13, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "1";
+            this.numericUpDown3.Location = new System.Drawing.Point(22, 102);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown3.TabIndex = 6;
             // 
-            // numericUpDown7
+            // label3
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(313, 101);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown7.TabIndex = 15;
-            this.numericUpDown7.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Начальные значения";
             // 
-            // numericUpDown8
+            // label6
             // 
-            this.numericUpDown8.Location = new System.Drawing.Point(313, 75);
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown8.TabIndex = 14;
-            this.numericUpDown8.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
-            // numericUpDown9
-            // 
-            this.numericUpDown9.Location = new System.Drawing.Point(313, 49);
-            this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown9.TabIndex = 13;
-            this.numericUpDown9.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(310, 33);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Остановиться на";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(160, 33);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Шаг увеличения ";
             // 
             // numericUpDown4
             // 
@@ -371,70 +322,110 @@
             0,
             0});
             // 
-            // label6
+            // numericUpDown7
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(160, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Шаг увеличения ";
+            this.numericUpDown7.Location = new System.Drawing.Point(313, 101);
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown7.TabIndex = 15;
+            this.numericUpDown7.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
-            // label3
+            // numericUpDown8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Начальные значения";
+            this.numericUpDown8.Location = new System.Drawing.Point(313, 75);
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown8.TabIndex = 14;
+            this.numericUpDown8.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
-            // numericUpDown3
+            // numericUpDown9
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(22, 102);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown3.TabIndex = 6;
+            this.numericUpDown9.Location = new System.Drawing.Point(313, 49);
+            this.numericUpDown9.Name = "numericUpDown9";
+            this.numericUpDown9.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown9.TabIndex = 13;
+            this.numericUpDown9.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
-            // numericUpDown2
+            // label7
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(22, 76);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 5;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(310, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Остановиться на";
             // 
-            // numericUpDown1
+            // label8
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(22, 50);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 4;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 52);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(13, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "1";
             // 
-            // button2
+            // label9
             // 
-            this.button2.Location = new System.Drawing.Point(22, 128);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Старт";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 79);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "2";
             // 
-            // label12
+            // label10
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 316);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "label12";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 105);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(13, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "3";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(66, 68);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 5;
+            this.textBox3.Text = "300";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 72);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Скорость:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(163, 128);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Перебор";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 334);
-            this.Controls.Add(this.label12);
+            this.ClientSize = new System.Drawing.Size(471, 284);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -447,17 +438,16 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -495,7 +485,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label12;
     }
 }
 
