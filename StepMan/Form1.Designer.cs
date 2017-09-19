@@ -176,7 +176,7 @@
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Шаг:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // label1
             // 
@@ -186,7 +186,7 @@
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Круг:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // textBox1
             // 
