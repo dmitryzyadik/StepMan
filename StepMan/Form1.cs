@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -17,19 +18,37 @@ namespace StepMan
         public Form1()
         {
             InitializeComponent();
-            serialPort1.PortName = "COM3";
+
+            string[] ports = SerialPort.GetPortNames();
+            foreach (string p in ports)
+            {
+                comboBox1.Items.Add(p);
+                    }
+
+            //setSpeed("400");
+
+        }
+
+        private void initSerial()
+        {
+            serialPort1.PortName = comboBox1.Text; //"COM3";
             serialPort1.BaudRate = 9600;
             serialPort1.DtrEnable = true;
             serialPort1.Open();
-            //setSpeed("400");
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             setSpeed(textBox3.Text.Trim());
             reset();
-            start(numericUpDown1.Value, numericUpDown2.Value, numericUpDown3.Value);
+            start(  Convert.ToByte(numericUpDown1.Value), 
+                    Convert.ToByte(numericUpDown2.Value), 
+                    Convert.ToByte(numericUpDown3.Value),
+                    Convert.ToByte(numericUpDown12.Value),
+                    Convert.ToByte(numericUpDown11.Value),
+                    Convert.ToByte(numericUpDown10.Value),
+                    Convert.ToByte(textBox2.Text)
+                 );
 
             //serialPort1.Write(richTextBox1.Text);            
         }
@@ -39,17 +58,29 @@ namespace StepMan
             serialPort1.Write(String.Format("{0}{1}", (fullRound * 4), "L"));
         }
 
-        private void start(decimal first, decimal second, decimal thirt)
+        private void start(byte first, byte second, byte thirt, byte firstRound, byte secondRound, byte thirtRound, byte _step)
         {
+            int total=0;
             //1           
-            serialPort1.Write(String.Format("{0}{1}", (fullRound * 4) + (first * step), "L"));
+            serialPort1.Write(String.Format("{0}{1}", (fullRound * firstRound) + (first * _step), "L"));
             //2            
-            serialPort1.Write(String.Format("{0}{1}", (fullRound * 3) + (second * step), "R"));
+            serialPort1.Write(String.Format("{0}{1}", (fullRound * secondRound) + (second * _step), "R"));
             //3            
-            serialPort1.Write(String.Format("{0}{1}", (fullRound * 2) + (thirt * step), "L"));
+            serialPort1.Write(String.Format("{0}{1}", (fullRound * thirtRound) + (thirt * _step), "L"));
 
             //open
             serialPort1.Write(String.Format("{0}{1}", (fullRound / 2), "R"));
+
+            total = (first * _step) - (second * _step) + (thirt * _step) - (fullRound / 2);
+            total = (total+1600) % 1600;
+            if (total > 0)
+            {
+                serialPort1.Write(String.Format("{0}{1}", Math.Abs(total), "R"));
+            }
+            else
+            {
+                serialPort1.Write(String.Format("{0}{1}", Math.Abs(total), "L"));
+            }
         }
 
 
@@ -101,7 +132,10 @@ namespace StepMan
                     thirt = numericUpDown3.Value;
                     while (thirt <= thirtEnd)
                     {
-                        start(first, second, thirt);
+                        start(
+                                Convert.ToByte(first), Convert.ToByte(second), Convert.ToByte(thirt),
+                                4,3,2,16
+                                );
                         label12.Text = String.Format("{0} {1} {2}", first, second, thirt);
                         Application.DoEvents();
                         Thread.Sleep(1000);
@@ -111,6 +145,11 @@ namespace StepMan
                 }
                 first += firstInc;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            initSerial();
         }
     }
 }

@@ -63,6 +63,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown12 = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -75,6 +82,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -148,6 +158,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.textBox3);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.textBox2);
@@ -156,7 +169,7 @@
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(206, 98);
+            this.groupBox3.Size = new System.Drawing.Size(206, 168);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Настройки";
@@ -214,6 +227,10 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.numericUpDown10);
+            this.groupBox4.Controls.Add(this.numericUpDown11);
+            this.groupBox4.Controls.Add(this.numericUpDown12);
+            this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label9);
@@ -231,9 +248,9 @@
             this.groupBox4.Controls.Add(this.numericUpDown2);
             this.groupBox4.Controls.Add(this.numericUpDown1);
             this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Location = new System.Drawing.Point(12, 116);
+            this.groupBox4.Location = new System.Drawing.Point(12, 186);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(449, 159);
+            this.groupBox4.Size = new System.Drawing.Size(548, 159);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Задание";
@@ -277,9 +294,9 @@
             // 
             // numericUpDown7
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(313, 101);
+            this.numericUpDown7.Location = new System.Drawing.Point(270, 102);
             this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown7.Size = new System.Drawing.Size(88, 20);
             this.numericUpDown7.TabIndex = 15;
             this.numericUpDown7.Value = new decimal(new int[] {
             100,
@@ -289,9 +306,9 @@
             // 
             // numericUpDown8
             // 
-            this.numericUpDown8.Location = new System.Drawing.Point(313, 75);
+            this.numericUpDown8.Location = new System.Drawing.Point(270, 76);
             this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown8.Size = new System.Drawing.Size(88, 20);
             this.numericUpDown8.TabIndex = 14;
             this.numericUpDown8.Value = new decimal(new int[] {
             100,
@@ -301,9 +318,9 @@
             // 
             // numericUpDown9
             // 
-            this.numericUpDown9.Location = new System.Drawing.Point(313, 49);
+            this.numericUpDown9.Location = new System.Drawing.Point(270, 50);
             this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown9.Size = new System.Drawing.Size(88, 20);
             this.numericUpDown9.TabIndex = 13;
             this.numericUpDown9.Value = new decimal(new int[] {
             100,
@@ -314,7 +331,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(310, 33);
+            this.label7.Location = new System.Drawing.Point(267, 34);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 13);
             this.label7.TabIndex = 12;
@@ -329,7 +346,7 @@
             0,
             0});
             this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown4.Size = new System.Drawing.Size(91, 20);
             this.numericUpDown4.TabIndex = 11;
             this.numericUpDown4.Value = new decimal(new int[] {
             1,
@@ -346,7 +363,7 @@
             0,
             0});
             this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown5.Size = new System.Drawing.Size(91, 20);
             this.numericUpDown5.TabIndex = 10;
             this.numericUpDown5.Value = new decimal(new int[] {
             1,
@@ -363,7 +380,7 @@
             0,
             0});
             this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown6.Size = new System.Drawing.Size(91, 20);
             this.numericUpDown6.TabIndex = 9;
             this.numericUpDown6.Value = new decimal(new int[] {
             1,
@@ -423,17 +440,104 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 296);
+            this.label12.Location = new System.Drawing.Point(18, 366);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 6;
             this.label12.Text = "label12";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 101);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 13);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Порт:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(66, 101);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(22, 139);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(144, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Соединение";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // numericUpDown10
+            // 
+            this.numericUpDown10.Location = new System.Drawing.Point(381, 102);
+            this.numericUpDown10.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numericUpDown10.Name = "numericUpDown10";
+            this.numericUpDown10.Size = new System.Drawing.Size(53, 20);
+            this.numericUpDown10.TabIndex = 23;
+            this.numericUpDown10.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown11
+            // 
+            this.numericUpDown11.Location = new System.Drawing.Point(381, 76);
+            this.numericUpDown11.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numericUpDown11.Name = "numericUpDown11";
+            this.numericUpDown11.Size = new System.Drawing.Size(53, 20);
+            this.numericUpDown11.TabIndex = 22;
+            this.numericUpDown11.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown12
+            // 
+            this.numericUpDown12.Location = new System.Drawing.Point(381, 50);
+            this.numericUpDown12.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numericUpDown12.Name = "numericUpDown12";
+            this.numericUpDown12.Size = new System.Drawing.Size(53, 20);
+            this.numericUpDown12.TabIndex = 21;
+            this.numericUpDown12.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(378, 34);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 13);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Кругов";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 324);
+            this.ClientSize = new System.Drawing.Size(586, 398);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -456,6 +560,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,6 +603,13 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown numericUpDown10;
+        private System.Windows.Forms.NumericUpDown numericUpDown11;
+        private System.Windows.Forms.NumericUpDown numericUpDown12;
+        private System.Windows.Forms.Label label14;
     }
 }
 
