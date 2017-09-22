@@ -40,46 +40,54 @@ namespace StepMan
         private void button2_Click(object sender, EventArgs e)
         {
             setSpeed(textBox3.Text.Trim());
-            reset();
-            start(  Convert.ToByte(numericUpDown1.Value), 
+            reset(Convert.ToInt16(textBox1.Text), Convert.ToByte(numericUpDown13.Value), Convert.ToChar(comboBox5.Text.Substring(1, 1)) );
+            start(  
+                    Convert.ToByte(numericUpDown1.Value), 
                     Convert.ToByte(numericUpDown2.Value), 
                     Convert.ToByte(numericUpDown3.Value),
                     Convert.ToByte(numericUpDown12.Value),
                     Convert.ToByte(numericUpDown11.Value),
                     Convert.ToByte(numericUpDown10.Value),
-                    Convert.ToByte(textBox2.Text)
+                    Convert.ToByte(textBox2.Text),
+                    Convert.ToByte(textBox1.Text),
+                    Convert.ToChar(comboBox2.Text.Substring(1, 1)),
+                    Convert.ToChar(comboBox3.Text.Substring(1, 1)),
+                    Convert.ToChar(comboBox4.Text.Substring(1, 1))
                  );
-
             //serialPort1.Write(richTextBox1.Text);            
         }
 
-        private void reset()
+        private void reset(int _round, byte _roundCount, char _dir)
         {
-            serialPort1.Write(String.Format("{0}{1}", (fullRound * 4), "L"));
+            serialPort1.Write(String.Format("{0}{1}", (_round * _roundCount), _dir));
         }
 
-        private void start(byte first, byte second, byte thirt, byte firstRound, byte secondRound, byte thirtRound, byte _step)
+        private void start(byte first, byte second, byte thirt, byte firstRound, byte secondRound, byte thirtRound, byte _step , int _round , char firstDir, char secDir, char thDir)
         {
             int total=0;
             //1           
-            serialPort1.Write(String.Format("{0}{1}", (fullRound * firstRound) + (first * _step), "L"));
+            serialPort1.Write(String.Format("{0}{1}", (_round * firstRound) + (first * _step), firstDir));
             //2            
-            serialPort1.Write(String.Format("{0}{1}", (fullRound * secondRound) + (second * _step), "R"));
+            serialPort1.Write(String.Format("{0}{1}", (_round * secondRound) + (second * _step), secDir));
             //3            
-            serialPort1.Write(String.Format("{0}{1}", (fullRound * thirtRound) + (thirt * _step), "L"));
+            serialPort1.Write(String.Format("{0}{1}", (_round * thirtRound) + (thirt * _step), thDir));
 
             //open
-            serialPort1.Write(String.Format("{0}{1}", (fullRound / 2), "R"));
-
-            total = (first * _step) - (second * _step) + (thirt * _step) - (fullRound / 2);
-            total = (total+1600) % 1600;
-            if (total > 0)
+            serialPort1.Write(String.Format("{0}{1}", (_round / 2), comboBox6.Text.Substring(1, 1)));
+            
+            //установка на ноль
+            if (checkBox1.Checked)
             {
-                serialPort1.Write(String.Format("{0}{1}", Math.Abs(total), "R"));
-            }
-            else
-            {
-                serialPort1.Write(String.Format("{0}{1}", Math.Abs(total), "L"));
+                total = (first * _step) - (second * _step) + (thirt * _step) - (_round / 2);
+                total = (total + _round) % _round;
+                if (total > 0)
+                {
+                    serialPort1.Write(String.Format("{0}{1}", Math.Abs(total), "R"));
+                }
+                else
+                {
+                    serialPort1.Write(String.Format("{0}{1}", Math.Abs(total), "L"));
+                }
             }
         }
 
@@ -132,10 +140,17 @@ namespace StepMan
                     thirt = numericUpDown3.Value;
                     while (thirt <= thirtEnd)
                     {
-                        start(
+                        start (
                                 Convert.ToByte(first), Convert.ToByte(second), Convert.ToByte(thirt),
-                                4,3,2,16
-                                );
+                                Convert.ToByte(numericUpDown12.Value),
+                                Convert.ToByte(numericUpDown11.Value),
+                                Convert.ToByte(numericUpDown10.Value),
+                                Convert.ToByte(textBox2.Text),
+                                Convert.ToByte(textBox1.Text),
+                                Convert.ToChar(comboBox2.Text.Substring(1, 1)),
+                                Convert.ToChar(comboBox3.Text.Substring(1, 1)),
+                                Convert.ToChar(comboBox4.Text.Substring(1, 1))
+                              );
                         label12.Text = String.Format("{0} {1} {2}", first, second, thirt);
                         Application.DoEvents();
                         Thread.Sleep(1000);
